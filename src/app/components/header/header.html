@@ -1,0 +1,20 @@
+<header>
+  <div class="header-top">
+    <div class="header-title">
+      <h1>{{ translate('header.title') }}</h1>
+      <h2><span class="name">Roxane Bélanger</span> {{ translate('header.subtitle') }}</h2>
+    </div>
+  </div>
+  <nav>
+    <div class="nav-links">
+      <a routerLink="/home" routerLinkActive="active">{{ translate('nav.home') }}</a>
+      <a routerLink="/services" routerLinkActive="active">{{ translate('nav.services') }}</a>
+      <a routerLink="/faq" routerLinkActive="active">{{ translate('nav.faq') }}</a>
+      <a routerLink="/about" routerLinkActive="active">{{ translate('nav.about') }}</a>
+      <a routerLink="/contact" routerLinkActive="active">{{ translate('nav.contact') }}</a>
+    </div>
+    <button class="language-toggle" (click)="toggleLanguage()">
+      {{ translate('nav.language') }}
+    </button>
+  </nav>
+</header>

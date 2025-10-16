@@ -1,0 +1,114 @@
+.services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.services-header {
+  background-color: white;
+  border-radius: 8px;
+  padding: 40px;
+  margin-bottom: 40px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.age-groups {
+  display: flex;
+  justify-content: space-around;
+  gap: 40px;
+}
+
+.age-group {
+  text-align: center;
+  flex: 1;
+}
+
+.age-group .icon {
+  font-size: 4rem;
+  margin-bottom: 15px;
+}
+
+.age-group h3 {
+  color: #333;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.services-content {
+  background-color: white;
+  border-radius: 8px;
+  padding: 40px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.services-row {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 40px;
+  align-items: center;
+}
+
+.services-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.services-list,
+.services-details {
+  flex: 1;
+}
+
+.services-list ul,
+.services-details ul {
+  list-style: none;
+  padding: 0;
+}
+
+.services-list li {
+  padding: 10px 0;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.services-details li {
+  padding: 8px 0;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.services-image {
+  flex: 1;
+  text-align: center;
+}
+
+.services-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.services-footer {
+  text-align: center;
+  padding: 30px 0;
+  margin-top: 40px;
+  border-top: 2px solid #f0f0f0;
+}
+
+.services-footer p {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #7b5e7b;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  .age-groups {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .services-row,
+  .services-row.reverse {
+    flex-direction: column;
+  }
+}
