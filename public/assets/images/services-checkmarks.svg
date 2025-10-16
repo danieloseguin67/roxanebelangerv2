@@ -1,0 +1,19 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#2d3436"/>
+  
+  <!-- Checkmarks in a chalkboard style -->
+  <g transform="translate(50, 50)" stroke="#00ff00" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 0 40 L 30 70 L 100 0" opacity="0.9"/>
+    <path d="M 0 120 L 30 150 L 100 80" opacity="0.9"/>
+    <path d="M 0 200 L 30 230 L 100 160" opacity="0.9"/>
+  </g>
+  
+  <g transform="translate(220, 50)" stroke="#00ff00" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 0 40 L 30 70 L 100 0" opacity="0.9"/>
+    <path d="M 0 120 L 30 150 L 100 80" opacity="0.9"/>
+    <path d="M 0 200 L 30 230 L 100 160" opacity="0.9"/>
+  </g>
+  
+  <!-- Chalk texture effect -->
+  <rect width="400" height="300" fill="url(#noise)" opacity="0.1"/>
+</svg>

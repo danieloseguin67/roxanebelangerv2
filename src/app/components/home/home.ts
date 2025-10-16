@@ -12,7 +12,7 @@ export class Home {
   currentSlide = signal(0);
   
   slides = [
-    { image: '/assets/images/slide1.svg', alt: 'Slide 1' },
+    { image: '/assets/images/home-main.svg', alt: 'Mother and child learning with blocks' },
     { image: '/assets/images/slide2.svg', alt: 'Slide 2' },
     { image: '/assets/images/slide3.svg', alt: 'Slide 3' }
   ];
