@@ -65,6 +65,40 @@
   background-color: white;
 }
 
+.bubble {
+  position: absolute;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.bubble-1 {
+  top: 10%;
+  left: 5%;
+  width: 60px;
+  height: auto;
+}
+
+.bubble-2 {
+  top: 15%;
+  right: 8%;
+  width: 50px;
+  height: auto;
+}
+
+.bubble-3 {
+  bottom: 25%;
+  left: 8%;
+  width: 55px;
+  height: auto;
+}
+
+.bubble-4 {
+  bottom: 20%;
+  right: 5%;
+  width: 50px;
+  height: auto;
+}
+
 .home-content {
   text-align: center;
   padding: 40px 20px;

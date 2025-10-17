@@ -6,6 +6,11 @@
            class="carousel-item">
         <img [src]="slide.image" [alt]="slide.alt" />
       </div>
+      <!-- Decorative speech bubbles -->
+      <img src="/assets/images/bubble1.png" alt="" class="bubble bubble-1" />
+      <img src="/assets/images/bubble2.png" alt="" class="bubble bubble-2" />
+      <img src="/assets/images/bubble3.png" alt="" class="bubble bubble-3" />
+      <img src="/assets/images/bubble4.png" alt="" class="bubble bubble-4" />
     </div>
     <div class="carousel-indicators">
       <button *ngFor="let slide of slides; let i = index"
