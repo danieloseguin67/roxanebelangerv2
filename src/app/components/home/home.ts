@@ -12,9 +12,9 @@ export class Home {
   currentSlide = signal(0);
   
   slides = [
-    { image: '/assets/images/home-main.svg', alt: 'Mother and child learning with blocks' },
-    { image: '/assets/images/slide2.svg', alt: 'Slide 2' },
-    { image: '/assets/images/slide3.svg', alt: 'Slide 3' }
+    { image: '/assets/images/mom_kid_playing.jpg', alt: 'Mother and child learning with blocks' },
+    { image: '/assets/images/dad_child_reading.jpg', alt: 'Father and child reading together' },
+    { image: '/assets/images/growing_tree.jpg', alt: 'Growing and learning' }
   ];
 
   constructor(public translationService: Translation) {}
