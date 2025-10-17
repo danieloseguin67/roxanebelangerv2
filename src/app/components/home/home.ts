@@ -18,7 +18,21 @@ export class Home {
     { image: '/assets/images/growing_tree.jpg', alt: 'Growing tree symbolizing development' }
   ];
 
+    private autoAdvanceInterval: any;
+
   constructor(public translationService: Translation) {}
+
+    ngOnInit() {
+      this.autoAdvanceInterval = setInterval(() => {
+        this.nextSlide();
+      }, 4000); // Change slide every 4 seconds
+    }
+
+    ngOnDestroy() {
+      if (this.autoAdvanceInterval) {
+        clearInterval(this.autoAdvanceInterval);
+      }
+    }
 
   translate(key: string): string {
     return this.translationService.translate(key);
