@@ -1,0 +1,15 @@
+<div class="faq-container">
+  <h1 class="faq-title">{{ translate('faq.title') }}</h1>
+  
+  <div class="faq-list">
+    <div *ngFor="let item of faqItems(); let i = index" class="faq-item">
+      <button class="faq-question" (click)="toggleFaq(i)">
+        <span>{{ translate(item.question) }}</span>
+        <span class="toggle-icon">{{ item.isOpen ? '▲' : '▼' }}</span>
+      </button>
+      <div class="faq-answer" [class.open]="item.isOpen">
+        <p>{{ translate(item.answer) }}</p>
+      </div>
+    </div>
+  </div>
+</div>

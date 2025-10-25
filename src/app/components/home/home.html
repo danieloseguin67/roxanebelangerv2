@@ -1,0 +1,35 @@
+<div class="home-container">
+  <div class="carousel">
+    <div class="carousel-inner">
+      <div *ngFor="let slide of slides; let i = index" 
+           [class.active]="i === currentSlide()"
+           class="carousel-item">
+        <img [src]="slide.image" [alt]="slide.alt" />
+      </div>
+      <!-- Decorative speech bubbles -->
+      <img src="/assets/images/bubble1.png" alt="" class="bubble bubble-1" />
+      <img src="/assets/images/bubble2.png" alt="" class="bubble bubble-2" />
+      <img src="/assets/images/bubble3.png" alt="" class="bubble bubble-3" />
+      <img src="/assets/images/bubble4.png" alt="" class="bubble bubble-4" />
+    </div>
+    
+    <!-- Navigation arrows -->
+    <button class="carousel-control prev" (click)="prevSlide()" aria-label="Previous slide">‹</button>
+    <button class="carousel-control next" (click)="nextSlide()" aria-label="Next slide">›</button>
+    
+    <div class="carousel-indicators">
+      <button *ngFor="let slide of slides; let i = index"
+              [class.active]="i === currentSlide()"
+              (click)="goToSlide(i)"
+              [attr.aria-label]="'Go to slide ' + (i + 1)">
+      </button>
+    </div>
+  </div>
+  
+  <div class="home-content">
+    <h2>{{ translate('home.title') }}</h2>
+    <h1>{{ translate('home.name') }}</h1>
+    <h3>{{ translate('home.profession') }}</h3>
+    <p class="tagline">{{ translate('home.tagline') }}</p>
+  </div>
+</div>

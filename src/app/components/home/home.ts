@@ -1,0 +1,52 @@
+import { Component, signal } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Translation } from '../../services/translation';
+
+@Component({
+  selector: 'app-home',
+  imports: [CommonModule],
+  templateUrl: './home.html',
+  styleUrl: './home.css'
+})
+export class Home {
+  currentSlide = signal(0);
+  
+  slides = [
+    { image: '/assets/images/mom_kid_playing.jpg', alt: 'Mother and child learning with blocks' },
+    { image: '/assets/images/dad_child_reading.jpg', alt: 'Father and child reading together' },
+    { image: '/assets/images/girl_thinking.jpg', alt: 'Girl thinking and learning' },
+    { image: '/assets/images/growing_tree.jpg', alt: 'Growing tree symbolizing development' }
+  ];
+
+    private autoAdvanceInterval: any;
+
+  constructor(public translationService: Translation) {}
+
+    ngOnInit() {
+      this.autoAdvanceInterval = setInterval(() => {
+        this.nextSlide();
+      }, 4000); // Change slide every 4 seconds
+    }
+
+    ngOnDestroy() {
+      if (this.autoAdvanceInterval) {
+        clearInterval(this.autoAdvanceInterval);
+      }
+    }
+
+  translate(key: string): string {
+    return this.translationService.translate(key);
+  }
+
+  nextSlide() {
+    this.currentSlide.set((this.currentSlide() + 1) % this.slides.length);
+  }
+
+  prevSlide() {
+    this.currentSlide.set((this.currentSlide() - 1 + this.slides.length) % this.slides.length);
+  }
+
+  goToSlide(index: number) {
+    this.currentSlide.set(index);
+  }
+}
