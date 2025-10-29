@@ -95,11 +95,11 @@ jobs:
           from: GitHub Actions
           body: |
             Deployment to GitHub Pages completed successfully!
-            
+
             Repository: ${{ github.repository }}
             Branch: ${{ github.ref_name }}
             Commit: ${{ github.sha }}
             Workflow: ${{ github.workflow }}
             Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-            
+
             Your website is now live at: https://danieloseguin67.github.io/roxanebelangerv2/
