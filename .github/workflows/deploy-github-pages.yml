@@ -81,6 +81,14 @@ jobs:
             echo "status_emoji=✅" >> $GITHUB_OUTPUT
             echo "status_text=Successful" >> $GITHUB_OUTPUT
             echo "status_long=SUCCESS" >> $GITHUB_OUTPUT
+          elif [ "${{ needs.deploy.result }}" = "cancelled" ]; then
+            echo "status_emoji=⚠️" >> $GITHUB_OUTPUT
+            echo "status_text=Cancelled" >> $GITHUB_OUTPUT
+            echo "status_long=CANCELLED" >> $GITHUB_OUTPUT
+          elif [ "${{ needs.deploy.result }}" = "skipped" ]; then
+            echo "status_emoji=⏭️" >> $GITHUB_OUTPUT
+            echo "status_text=Skipped" >> $GITHUB_OUTPUT
+            echo "status_long=SKIPPED" >> $GITHUB_OUTPUT
           else
             echo "status_emoji=❌" >> $GITHUB_OUTPUT
             echo "status_text=Failed" >> $GITHUB_OUTPUT
