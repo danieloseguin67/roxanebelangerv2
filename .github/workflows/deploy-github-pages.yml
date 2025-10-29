@@ -113,7 +113,7 @@ jobs:
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
           subject: "GitHub Pages Deployment ${{ steps.status.outputs.status_emoji }} ${{ steps.status.outputs.status_text }}"
-          to: ${{ secrets.MAIL_TO }}
+          to: danieloseguin67@gmail.com
           from: github-actions@github.com
           body: |
             Deployment Status: ${{ steps.status.outputs.status_emoji }} ${{ steps.status.outputs.status_long }}
