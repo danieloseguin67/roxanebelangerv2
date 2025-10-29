@@ -10,3 +10,26 @@ footer {
   margin: 5px 0;
   font-size: 1rem;
 }
+
+/* Tablet styles */
+@media (max-width: 1023px) {
+  footer {
+    padding: 25px 20px;
+  }
+
+  .footer-content p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 767px) {
+  footer {
+    padding: 20px 15px;
+  }
+
+  .footer-content p {
+    font-size: 0.85rem;
+    margin: 3px 0;
+  }
+}

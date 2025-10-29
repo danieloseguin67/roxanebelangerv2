@@ -6,12 +6,15 @@
     </div>
   </div>
   <nav>
-    <div class="nav-links">
-      <a routerLink="/home" routerLinkActive="active">{{ translate('nav.home') }}</a>
-      <a routerLink="/services" routerLinkActive="active">{{ translate('nav.services') }}</a>
-      <a routerLink="/faq" routerLinkActive="active">{{ translate('nav.faq') }}</a>
-      <a routerLink="/about" routerLinkActive="active">{{ translate('nav.about') }}</a>
-      <a routerLink="/contact" routerLinkActive="active">{{ translate('nav.contact') }}</a>
+    <button class="mobile-menu-toggle" (click)="toggleMobileMenu()" aria-label="Toggle menu">
+      <span class="hamburger-icon"></span>
+    </button>
+    <div class="nav-links" [class.mobile-menu-open]="mobileMenuOpen">
+      <a routerLink="/home" routerLinkActive="active" (click)="closeMobileMenu()">{{ translate('nav.home') }}</a>
+      <a routerLink="/services" routerLinkActive="active" (click)="closeMobileMenu()">{{ translate('nav.services') }}</a>
+      <a routerLink="/faq" routerLinkActive="active" (click)="closeMobileMenu()">{{ translate('nav.faq') }}</a>
+      <a routerLink="/about" routerLinkActive="active" (click)="closeMobileMenu()">{{ translate('nav.about') }}</a>
+      <a routerLink="/contact" routerLinkActive="active" (click)="closeMobileMenu()">{{ translate('nav.contact') }}</a>
     </div>
     <button class="language-toggle" (click)="toggleLanguage()">
       {{ translate('nav.language') }}

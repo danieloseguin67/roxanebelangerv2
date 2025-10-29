@@ -9,6 +9,8 @@ import { Translation } from '../../services/translation';
   styleUrl: './header.css'
 })
 export class Header {
+  mobileMenuOpen = false;
+
   constructor(public translationService: Translation) {}
 
   toggleLanguage() {
@@ -17,5 +19,13 @@ export class Header {
 
   translate(key: string): string {
     return this.translationService.translate(key);
+  }
+
+  toggleMobileMenu() {
+    this.mobileMenuOpen = !this.mobileMenuOpen;
+  }
+
+  closeMobileMenu() {
+    this.mobileMenuOpen = false;
   }
 }
