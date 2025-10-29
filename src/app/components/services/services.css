@@ -111,7 +111,7 @@
   letter-spacing: 1px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .age-groups {
     flex-direction: column;
     gap: 15px;
