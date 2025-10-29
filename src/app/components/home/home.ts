@@ -12,10 +12,10 @@ export class Home {
   currentSlide = signal(0);
   
   slides = [
-    { image: '/assets/images/mom_kid_playing.jpg', alt: 'Mother and child learning with blocks' },
-    { image: '/assets/images/dad_child_reading.jpg', alt: 'Father and child reading together' },
-    { image: '/assets/images/girl_thinking.jpg', alt: 'Girl thinking and learning' },
-    { image: '/assets/images/growing_tree.jpg', alt: 'Growing tree symbolizing development' }
+    { image: './assets/images/mom_kid_playing.jpg', alt: 'Mother and child learning with blocks' },
+    { image: './assets/images/dad_child_reading.jpg', alt: 'Father and child reading together' },
+    { image: './assets/images/girl_thinking.jpg', alt: 'Girl thinking and learning' },
+    { image: './assets/images/growing_tree.jpg', alt: 'Growing tree symbolizing development' }
   ];
 
     private autoAdvanceInterval: any;
