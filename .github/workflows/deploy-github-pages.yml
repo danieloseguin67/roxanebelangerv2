@@ -80,10 +80,12 @@ jobs:
   notify:
     runs-on: ubuntu-latest
     needs: [build, deploy]
-    if: needs.deploy.result == 'success'
+    if: always() && needs.deploy.result == 'success'
+    continue-on-error: true
     steps:
       - name: Send deployment success email
         uses: dawidd6/action-send-mail@v3
+        continue-on-error: true
         with:
           server_address: smtp.gmail.com
           server_port: 587
