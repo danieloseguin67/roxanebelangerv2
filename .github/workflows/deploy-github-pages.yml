@@ -74,18 +74,32 @@ jobs:
     needs: [build, deploy]
     if: always()
     steps:
+      - name: Determine deployment status
+        id: status
+        run: |
+          if [ "${{ needs.deploy.result }}" = "success" ]; then
+            echo "status_emoji=✅" >> $GITHUB_OUTPUT
+            echo "status_text=Successful" >> $GITHUB_OUTPUT
+            echo "status_long=SUCCESS" >> $GITHUB_OUTPUT
+          else
+            echo "status_emoji=❌" >> $GITHUB_OUTPUT
+            echo "status_text=Failed" >> $GITHUB_OUTPUT
+            echo "status_long=FAILED" >> $GITHUB_OUTPUT
+          fi
+
       - name: Send email notification
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: smtp.gmail.com
           server_port: 465
+          secure: true
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
-          subject: 'GitHub Pages Deployment ${{ needs.deploy.result == ''success'' && ''✅ Successful'' || ''❌ Failed'' }}'
+          subject: "GitHub Pages Deployment ${{ steps.status.outputs.status_emoji }} ${{ steps.status.outputs.status_text }}"
           to: ${{ secrets.MAIL_TO }}
-          from: GitHub Actions
+          from: github-actions@github.com
           body: |
-            Deployment Status: ${{ needs.deploy.result == 'success' && '✅ SUCCESS' || '❌ FAILED' }}
+            Deployment Status: ${{ steps.status.outputs.status_emoji }} ${{ steps.status.outputs.status_long }}
             
             Repository: ${{ github.repository }}
             Branch: ${{ github.ref_name }}
