@@ -104,28 +104,3 @@ jobs:
             echo "status_long=FAILED" >> $GITHUB_OUTPUT
           fi
 
-      - name: Send email notification
-        uses: dawidd6/action-send-mail@v3
-        with:
-          server_address: smtp.gmail.com
-          server_port: 465
-          secure: true
-          username: ${{ secrets.MAIL_USERNAME }}
-          password: ${{ secrets.MAIL_PASSWORD }}
-          subject: "GitHub Pages Deployment ${{ steps.status.outputs.status_emoji }} ${{ steps.status.outputs.status_text }}"
-          to: danieloseguin67@gmail.com
-          from: github-actions@github.com
-          body: |
-            Deployment Status: ${{ steps.status.outputs.status_emoji }} ${{ steps.status.outputs.status_long }}
-            
-            Repository: ${{ github.repository }}
-            Branch: ${{ github.ref_name }}
-            Commit: ${{ github.sha }}
-            Triggered by: ${{ github.actor }}
-            Workflow: ${{ github.workflow }}
-            
-            Build Job: ${{ needs.build.result }}
-            Deploy Job: ${{ needs.deploy.result }}
-            
-            View deployment: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
-            View run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
