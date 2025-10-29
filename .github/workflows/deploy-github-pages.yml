@@ -1,10 +1,10 @@
-name: Deploy to GitHub Pages
-
 on:
   push:
     branches:
       - main
   workflow_dispatch:
+
+name: Deploy to GitHub Pages
 
 permissions:
   contents: read
@@ -50,13 +50,22 @@ jobs:
           # Build production output; base-href ensures assets are resolved for repo-hosted pages
           npm run build -- --configuration production --project "$PROJECT_NAME" --base-href "/$REPO_NAME/"
 
+      - name: Show build output (for debugging)
+        run: |
+          echo "Listing dist directory"
+          ls -la ./dist || true
+          echo "Listing project dist directory (if exists)"
+          ls -la ./dist/${{ steps.extract-names.outputs.project-name }} || true
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist/${{ steps.extract-names.outputs.project-name }}/browser
+          # Use the actual angular output directory. Many Angular projects output to ./dist/<project-name>
+          # (some setups used ./dist/<project-name>/browser — if your project outputs to that, change this path.)
+          path: ./dist/${{ steps.extract-names.outputs.project-name }}
 
   deploy:
     environment:
