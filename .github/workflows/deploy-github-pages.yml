@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - copilot/deploy-roxanebelanger-website
   workflow_dispatch:
 
 permissions:
