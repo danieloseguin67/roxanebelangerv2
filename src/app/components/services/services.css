@@ -111,7 +111,7 @@
   letter-spacing: 1px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .age-groups {
     flex-direction: column;
     gap: 15px;
@@ -120,5 +120,34 @@
   .services-row.reverse {
     flex-direction: column;
     gap: 10px;
+  }
+  .services-image img {
+    max-width: 100%;
+  }
+  .services-footer p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Tablet styles */
+@media (min-width: 769px) and (max-width: 1023px) {
+  .services-container {
+    padding: 20px 15px;
+  }
+
+  .age-groups {
+    gap: 15px;
+  }
+
+  .age-group h3 {
+    font-size: 1rem;
+  }
+
+  .services-row {
+    gap: 15px;
+  }
+
+  .services-image img {
+    max-width: 90%;
   }
 }
