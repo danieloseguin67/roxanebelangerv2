@@ -44,6 +44,33 @@ npm run build
 ```
 Build artifacts will be stored in the `dist/` directory.
 
+## Deployment
+
+This project is configured to automatically deploy to GitHub Pages when changes are pushed to the `main` branch.
+
+### GitHub Pages Setup
+
+The workflow is located at `.github/workflows/deploy-github-pages.yml` and will:
+1. Build the Angular application for production
+2. Deploy to GitHub Pages
+3. Send email notifications on success or failure
+
+### Required GitHub Secrets
+
+To enable email notifications, configure the following secrets in your repository settings (Settings → Secrets and variables → Actions):
+
+- `MAIL_USERNAME`: Your email username (e.g., for Gmail)
+- `MAIL_PASSWORD`: Your email password or app-specific password
+- `MAIL_TO`: Email address to receive notifications
+
+**For Gmail users:**
+- Use an [App Password](https://support.google.com/accounts/answer/185833) instead of your regular password
+- The workflow uses Gmail's SMTP server by default (smtp.gmail.com:465)
+
+### Manual Deployment
+
+You can also trigger a deployment manually from the GitHub Actions tab using the "workflow_dispatch" trigger.
+
 ## Language Switching
 
 Users can toggle between English and French using the language switcher button in the top-right corner of the navigation bar.
