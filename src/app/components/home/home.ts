@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Translation } from '../../services/translation';
 
@@ -8,7 +8,7 @@ import { Translation } from '../../services/translation';
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
-export class Home {
+export class Home implements OnInit, OnDestroy {
   currentSlide = signal(0);
   
   slides = [

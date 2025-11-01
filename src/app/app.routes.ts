@@ -11,5 +11,6 @@ export const routes: Routes = [
   { path: 'services', component: Services },
   { path: 'faq', component: Faq },
   { path: 'about', component: About },
-  { path: 'contact', component: Contact }
+  { path: 'contact', component: Contact },
+  { path: '**', redirectTo: '/home' }  // Wildcard route for any unmatched routes
 ];
