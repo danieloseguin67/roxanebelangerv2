@@ -58,6 +58,9 @@
         },
         "serve": {
           "builder": "@angular/build:dev-server",
+          "options": {
+            "poll": 2000
+          },
           "configurations": {
             "production": {
               "buildTarget": "roxane-belanger-app:build:production"

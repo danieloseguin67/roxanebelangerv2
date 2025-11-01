@@ -13,7 +13,7 @@ interface Translations {
   providedIn: 'root'
 })
 export class Translation {
-  private currentLanguage = signal<Language>('en');
+  private currentLanguage = signal<Language>('fr');
 
   private translations: Translations = {
     // Header
