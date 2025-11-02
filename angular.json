@@ -34,7 +34,6 @@
           },
           "configurations": {
             "production": {
-              "outputPath": "dist/roxane-belanger-app",
               "budgets": [
                 {
                   "type": "initial",
