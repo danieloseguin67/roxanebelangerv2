@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>RoxaneBelangerApp</title>
+  <script type="text/javascript">
+    // Single Page Application routing fix for GitHub Pages and static hosting
+    // This script takes the current URL and redirects to the correct path
+    var l = window.location;
+    var isGitHubPages = l.hostname === 'danieloseguin67.github.io';
+    var pathSegmentsToKeep = isGitHubPages ? 1 : 0; // For /roxanebelangerv2/ base path on GitHub Pages
+    
+    if (isGitHubPages) {
+      // GitHub Pages routing
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/' +
+        '?/' + l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+        l.hash
+      );
+    } else {
+      // Custom domain routing - redirect to index with hash
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        '/#' + l.pathname +
+        (l.search || '') +
+        (l.hash || '')
+      );
+    }
+  </script>
+</head>
+<body>
+  <p>Redirecting...</p>
+</body>
+</html>
