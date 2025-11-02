@@ -1,15 +1,8 @@
-# Apache configuration for Angular SPA routing
-<IfModule mod_rewrite.c>
-  RewriteEngine On
-  
-  # Handle Angular Router requests
-  # Send all requests to index.html unless the requested file exists
-  RewriteBase /
-  RewriteRule ^index\.html$ - [L]
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule . /index.html [L]
-</IfModule>
+# Simple fallback for hash routing
+DirectoryIndex index.html
+
+# Optional: Basic error handling
+ErrorDocument 404 /index.html
 
 # Gzip compression
 <IfModule mod_deflate.c>
