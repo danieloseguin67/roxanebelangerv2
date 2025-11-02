@@ -59,7 +59,8 @@
         "serve": {
           "builder": "@angular/build:dev-server",
           "options": {
-            "poll": 2000
+            "poll": 2000,
+            "port": 4200
           },
           "configurations": {
             "production": {
