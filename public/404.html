@@ -4,28 +4,28 @@
   <meta charset="utf-8">
   <title>RoxaneBelangerApp</title>
   <script type="text/javascript">
-    // Single Page Application routing fix for GitHub Pages and static hosting
-    // This script takes the current URL and redirects to the correct path
+    // Hash-based SPA routing fix for GitHub Pages and static hosting.
+    // Since the app uses Angular hash routing, we redirect any deep-link
+    // to the base URL with the route encoded as a hash fragment.
     var l = window.location;
     var isGitHubPages = l.hostname === 'danieloseguin67.github.io';
-    var pathSegmentsToKeep = isGitHubPages ? 1 : 0; // For /roxanebelangerv2/ base path on GitHub Pages
-    
+
     if (isGitHubPages) {
-      // GitHub Pages routing
+      // Extract the route path after the repo segment (/roxanebelangerv2)
+      var pathParts = l.pathname.split('/');
+      // pathParts: ['', 'roxanebelangerv2', 'route', ...]
+      var routePath = '/' + pathParts.slice(2).filter(Boolean).join('/');
       l.replace(
-        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/' +
-        '?/' + l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
-        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-        l.hash
+        l.protocol + '//' + l.hostname + '/roxanebelangerv2/' +
+        '#' + routePath +
+        (l.search || '')
       );
     } else {
-      // Custom domain routing - redirect to index with hash
+      // Custom domain: redirect to index with hash
       l.replace(
         l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
         '/#' + l.pathname +
-        (l.search || '') +
-        (l.hash || '')
+        (l.search || '')
       );
     }
   </script>
