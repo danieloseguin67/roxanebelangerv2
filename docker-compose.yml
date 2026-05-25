@@ -24,7 +24,7 @@ services:
       context: .
       dockerfile: Dockerfile.dev
     ports:
-      - "4200:4200"
+      - "4265:4265"
     container_name: roxane-belanger-dev
     volumes:
       - .:/app

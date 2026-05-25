@@ -1,5 +1,5 @@
 # Development Dockerfile for hot reloading
-FROM node:18-alpine
+FROM node:22-alpine
 
 # Set working directory
 WORKDIR /app
@@ -13,8 +13,8 @@ RUN npm ci
 # Copy source code
 COPY . .
 
-# Expose port 4200 for Angular dev server
-EXPOSE 4200
+# Expose port 4262 for Angular dev server
+EXPOSE 4265
 
 # Start development server
-CMD ["npm", "start", "--", "--host", "0.0.0.0", "--port", "4200"]
+CMD ["npm", "start", "--", "--host", "0.0.0.0", "--port", "4265"]

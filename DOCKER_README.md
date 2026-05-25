@@ -27,7 +27,7 @@ docker-compose up -d
 # Run development environment with hot reloading
 docker-compose --profile dev up roxane-belanger-dev
 
-# Access the development server at http://localhost:4200
+# Access the development server at http://localhost:4265
 ```
 
 ### Manual Docker Commands
@@ -43,7 +43,7 @@ docker run -d -p 8080:80 --name roxane-belanger-app roxane-belanger-v2
 docker build -f Dockerfile.dev -t roxane-belanger-v2-dev .
 
 # Run development container
-docker run -d -p 4200:4200 -v ${PWD}:/app -v /app/node_modules --name roxane-belanger-dev roxane-belanger-v2-dev
+docker run -d -p 4265:80 -v ${PWD}:/app -v /app/node_modules --name roxane-belanger-dev roxane-belanger-v2-dev
 ```
 
 ## Features
@@ -73,7 +73,7 @@ docker run -d -p 4200:4200 -v ${PWD}:/app -v /app/node_modules --name roxane-bel
 ### Ports
 
 - Production: 8080 → 80 (nginx)
-- Development: 4200 → 4200 (Angular dev server)
+- Development: 4265 → 00 (Angular dev server)
 
 ### Health Check
 
